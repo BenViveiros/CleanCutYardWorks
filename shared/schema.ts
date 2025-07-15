@@ -20,6 +20,7 @@ export const quotes = pgTable("quotes", {
   budgetRange: text("budget_range"),
   description: text("description").notNull(),
   timeline: text("timeline"),
+  requestedDate: timestamp("requested_date").notNull(),
   status: text("status").notNull().default("pending"), // pending, approved, rejected, completed
   amount: decimal("amount", { precision: 10, scale: 2 }),
   validUntil: timestamp("valid_until"),

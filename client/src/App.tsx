@@ -9,6 +9,7 @@ import Dashboard from "@/pages/dashboard";
 import QuoteRequest from "@/pages/quote-request";
 import QuoteManagement from "@/pages/quote-management";
 import Customers from "@/pages/customers";
+import CalendarPage from "@/pages/calendar";
 import Reports from "@/pages/reports";
 import NotFound from "@/pages/not-found";
 
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/quote-request" component={QuoteRequest} />
       <Route path="/quotes" component={QuoteManagement} />
       <Route path="/customers" component={Customers} />
+      <Route path="/calendar" component={CalendarPage} />
       <Route path="/reports" component={Reports} />
       <Route component={NotFound} />
     </Switch>

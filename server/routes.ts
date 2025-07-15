@@ -124,6 +124,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         budgetRange: validatedData.budgetRange,
         description: validatedData.description,
         timeline: validatedData.timeline,
+        requestedDate: new Date(),
         status: "pending",
         amount: null,
       });

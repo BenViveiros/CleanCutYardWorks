@@ -44,6 +44,7 @@ The application uses three main entities:
 - **Quote Request**: Form for customers to submit new quote requests
 - **Quote Management**: Admin interface for managing quotes and their status
 - **Customers**: Customer management and relationship tracking
+- **Calendar**: Visual calendar system to track all projects and their dates
 - **Reports**: Business analytics and reporting
 
 ### API Endpoints

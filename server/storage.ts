@@ -60,6 +60,98 @@ export class MemStorage implements IStorage {
     this.currentQuoteId = 1;
     this.currentQuoteItemId = 1;
     this.currentQuoteNumber = 1;
+    
+    // Add sample data for calendar testing
+    this.initializeSampleData();
+  }
+
+  private async initializeSampleData() {
+    // Create sample customers
+    const customers = [
+      { name: "John Smith", email: "john@example.com", phone: "(555) 123-4567", address: "123 Main St, Anytown, CA 90210" },
+      { name: "Sarah Johnson", email: "sarah@example.com", phone: "(555) 234-5678", address: "456 Oak Ave, Anytown, CA 90210" },
+      { name: "Mike Davis", email: "mike@example.com", phone: "(555) 345-6789", address: "789 Pine Rd, Anytown, CA 90210" },
+      { name: "Emily Wilson", email: "emily@example.com", phone: "(555) 456-7890", address: "321 Elm St, Anytown, CA 90210" },
+    ];
+
+    for (const customerData of customers) {
+      await this.createCustomer(customerData);
+    }
+
+    // Create sample quotes with different dates
+    const today = new Date();
+    const sampleQuotes = [
+      {
+        customerId: 1,
+        projectType: "Lawn Installation",
+        propertySize: 2000,
+        budgetRange: "$2,000 - $5,000",
+        description: "New lawn installation with irrigation system",
+        timeline: "2-3 weeks",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1),
+        status: "pending",
+        amount: "3500.00",
+      },
+      {
+        customerId: 2,
+        projectType: "Garden Design",
+        propertySize: 1500,
+        budgetRange: "$1,500 - $3,000",
+        description: "Backyard garden design with flower beds",
+        timeline: "1-2 weeks",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5),
+        status: "approved",
+        amount: "2200.00",
+      },
+      {
+        customerId: 3,
+        projectType: "Tree Removal",
+        propertySize: 500,
+        budgetRange: "$500 - $1,000",
+        description: "Remove two large oak trees from backyard",
+        timeline: "1 week",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 10),
+        status: "completed",
+        amount: "750.00",
+      },
+      {
+        customerId: 4,
+        projectType: "Landscape Maintenance",
+        propertySize: 3000,
+        budgetRange: "$300 - $500",
+        description: "Monthly landscape maintenance service",
+        timeline: "Ongoing",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 15),
+        status: "approved",
+        amount: "400.00",
+      },
+      {
+        customerId: 1,
+        projectType: "Patio Installation",
+        propertySize: 800,
+        budgetRange: "$3,000 - $6,000",
+        description: "Stone patio installation with seating area",
+        timeline: "3-4 weeks",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 20),
+        status: "pending",
+        amount: "4500.00",
+      },
+      {
+        customerId: 2,
+        projectType: "Sprinkler System",
+        propertySize: 2500,
+        budgetRange: "$1,000 - $2,500",
+        description: "Install automated sprinkler system for front yard",
+        timeline: "1-2 weeks",
+        requestedDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 5),
+        status: "completed",
+        amount: "1800.00",
+      },
+    ];
+
+    for (const quoteData of sampleQuotes) {
+      await this.createQuote(quoteData);
+    }
   }
 
   // Customers
@@ -119,6 +211,7 @@ export class MemStorage implements IStorage {
       budgetRange: insertQuote.budgetRange || null,
       description: insertQuote.description,
       timeline: insertQuote.timeline || null,
+      requestedDate: insertQuote.requestedDate || new Date(),
       status: insertQuote.status || "pending",
       amount: insertQuote.amount || null,
       validUntil,
