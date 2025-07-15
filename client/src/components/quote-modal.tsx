@@ -95,7 +95,7 @@ export function QuoteModal({ open, onOpenChange, quoteId }: QuoteModalProps) {
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <Leaf className="text-primary text-3xl mr-3" aria-hidden="true" />
-                <h2 className="text-2xl font-bold text-foreground">GreenScape Pro</h2>
+                <h2 className="text-2xl font-bold text-foreground">Clean Cut Yard Works</h2>
               </div>
               <p className="text-muted-foreground">Professional Landscaping Services</p>
               <p className="text-sm text-muted-foreground">

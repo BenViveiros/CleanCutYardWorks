@@ -6,7 +6,7 @@ export async function generateQuotePDF(quote: Quote, customer: Customer, items: 
   
   // Company header
   doc.setFontSize(20);
-  doc.text("GreenScape Pro", 20, 20);
+  doc.text("Clean Cut Yard Works", 20, 20);
   doc.setFontSize(12);
   doc.text("Professional Landscaping Services", 20, 30);
   doc.text("123 Garden Street, Green Valley, CA 90210 | (555) 123-4567", 20, 40);

@@ -27,7 +27,7 @@ export function Navigation() {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Leaf className="text-primary text-2xl mr-3" aria-hidden="true" />
-              <h1 className="text-xl font-semibold text-foreground">GreenScape Pro</h1>
+              <h1 className="text-xl font-semibold text-foreground">Clean Cut Yard Works</h1>
             </div>
           </div>
           

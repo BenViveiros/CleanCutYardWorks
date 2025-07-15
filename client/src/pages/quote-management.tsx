@@ -111,10 +111,10 @@ export default function QuoteManagement() {
       quote.customer?.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       quote.projectType.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesStatus = !statusFilter || quote.status === statusFilter;
+    const matchesStatus = !statusFilter || statusFilter === "all" || quote.status === statusFilter;
     
     // TODO: Implement date filtering
-    const matchesDate = !dateFilter || true;
+    const matchesDate = !dateFilter || dateFilter === "all" || true;
     
     return matchesSearch && matchesStatus && matchesDate;
   });
@@ -228,7 +228,7 @@ export default function QuoteManagement() {
                   <SelectValue placeholder="All Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Status</SelectItem>
+                  <SelectItem value="all">All Status</SelectItem>
                   <SelectItem value="pending">Pending</SelectItem>
                   <SelectItem value="approved">Approved</SelectItem>
                   <SelectItem value="rejected">Rejected</SelectItem>
@@ -240,7 +240,7 @@ export default function QuoteManagement() {
                   <SelectValue placeholder="All Dates" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Dates</SelectItem>
+                  <SelectItem value="all">All Dates</SelectItem>
                   <SelectItem value="today">Today</SelectItem>
                   <SelectItem value="week">This Week</SelectItem>
                   <SelectItem value="month">This Month</SelectItem>

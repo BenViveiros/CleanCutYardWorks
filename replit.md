@@ -1,8 +1,8 @@
-# GreenScape Pro - Landscaping Quote Management System
+# Clean Cut Yard Works - Landscaping Quote Management System
 
 ## Overview
 
-GreenScape Pro is a full-stack web application designed for landscaping businesses to manage quotes, customers, and generate reports. The system provides a comprehensive dashboard for tracking business performance and streamlining the quote generation process.
+Clean Cut Yard Works is a full-stack web application designed for landscaping businesses to manage quotes, customers, and generate reports. The system provides a comprehensive dashboard for tracking business performance and streamlining the quote generation process.
 
 ## User Preferences
 
